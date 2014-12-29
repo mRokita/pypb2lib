@@ -1,3 +1,4 @@
+from os.path import getsize
 from threading import Thread
 from socket import socket, AF_INET, SOCK_DGRAM
 from urllib2 import urlopen
@@ -261,7 +262,7 @@ class Server():
 	def rcon_players(self):
 		return_value=[]
 		response=self.rcon('sv players')
-		response=re.findall('(\d+) \\(?(.*?)\\)?\\]\\ \\*\\ O?P?\\ ?(?:\d+)?\\,?\\ ?(.+)\\ \\((b\d+)\\)', response)
+		response=re.findall('(\d+) \\(?(.*?)\\)?\\]\\ \\*\\ (?:OP\\ \d+\\,\\ )?(.+)\\ \\((b\d+)\\)', response)
 		for i in response:
 			dictionary={}
 			print i
