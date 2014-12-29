@@ -265,7 +265,6 @@ class Server():
 		response=re.findall('(\d+) \\(?(.*?)\\)?\\]\\ \\*\\ (?:OP\\ \d+\\,\\ )?(.+)\\ \\((b\d+)\\)', response)
 		for i in response:
 			dictionary={}
-			print i
 			dictionary['id']=i[0]
 			dictionary['dplogin']=i[1]
 			dictionary['name']=i[2]
