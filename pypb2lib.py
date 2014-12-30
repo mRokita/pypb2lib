@@ -262,7 +262,7 @@ class Server():
 	def rcon_players(self):
 		return_value=[]
 		response=self.rcon('sv players')
-		response=re.findall('(\d+) \\(?(.*?)\\)?\\]\\ \\*\\ (?:OP\\ \d+\\,\\ )?(.+)\\ \\((b\d+)\\)', response)
+		response=re.findall('(\d+)\\ \\(?(.*?)\\)?\\]\\ \\*\\ (?:OP\\ \d+\\,\\ )?(.+)\\ \\((b\d+)\\)', response)
 		for i in response:
 			dictionary={}
 			dictionary['id']=i[0]
