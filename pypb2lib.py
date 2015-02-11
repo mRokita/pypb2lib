@@ -1,4 +1,3 @@
-from os.path import getsize
 from threading import Thread
 from socket import socket, AF_INET, SOCK_DGRAM
 from urllib2 import urlopen
@@ -292,4 +291,5 @@ class Server():
 			if i:
 				self._Event(i)
 			time.sleep(0.05)
+		log_file.close()
 #------------------------------------------------------
